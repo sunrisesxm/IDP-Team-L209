@@ -1,3 +1,3 @@
-# Automatically generated Makefile
-identify_motors : identify_motors.cc 
-	 g++ -ansi -Wall -g -I/export/teach/1BRobot -L/export/teach/1BRobot identify_motors.cc -o identify_motors -lrobot
+# Automatically generated Makefile for arm
+identify_motors.arm : identify_motors.cc 
+	 arm-linux-gnueabi-g++ -ansi -Wall -g -I/usr/arm-unknown-linux-gnueabi/include -I/export/teach/1BRobot -L/usr/arm-unknown-linux-gnueabi/lib identify_motors.cc -o identify_motors.arm -lrobot
