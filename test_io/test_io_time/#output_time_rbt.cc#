@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+#include <robot_instr.h>
+#include <robot_link.h>
+#include <stopwatch.h>
+
+robot_link  rlink;                            // datatype for the robot link
+int main ()
+{
+stopwatch watch;
+watch.start();
+rlink.initialise(ROBOT_NUM);
+rlink.command(WRITE_PORT_7, 64+16);
+cout << "Connected to robot" << endl;
+for (int i=1; i<100; i++){
+	
+	
+	
+	rlink.command(WRITE_PORT_7, i);
+	
+	}
+int etime=watch.stop();
+cout << etime <<endl;
+}
