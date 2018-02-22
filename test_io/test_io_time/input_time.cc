@@ -7,18 +7,19 @@ using namespace std;
 robot_link  rlink;                            // datatype for the robot link
 int main ()
 {
+
+#ifdef __arm__
+	rlink.initialise ();      //setup for local hardware
+#else
+	rlink.initialise(ROBOT_NUM);       //setup the link
+#endif
 stopwatch watch;
 watch.start();
-rlink.initialise(ROBOT_NUM);
-rlink.command(WRITE_PORT_7, 255);
+
 int v=rlink.request(READ_PORT_7);
 cout << "Connected to robot" << endl;
 for (int i=1; i<50; i++){
 	
-	
-
-	
-	rlink.command(WRITE_PORT_7, 255);
 	v=rlink.request(READ_PORT_7);
 	cout << "Value="  <<v << endl;
 	
