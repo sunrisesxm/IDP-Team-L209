@@ -1,0 +1,14 @@
+Egg collection;
+
+do{
+  do{
+    send IR signal 
+    (turn the platform) 
+    }while(!egg detected by distance sensor);
+  call egg collection mechanism;
+  if (the egg is required) push to nest;
+  else push to recycling;
+  
+}while (!All eggs needed are obtained);
+
+return finish;

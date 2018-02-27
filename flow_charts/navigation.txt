@@ -1,0 +1,20 @@
+Navigation;
+ftl:
+
+  do{
+    do{
+      Follow the lines;
+      if (destination reached) {
+        execute relevant command;
+        return; }
+    } while (!junction detedted)
+    Flash an LED;
+  } while (going straight?)
+  Turn left/right;
+goto ftl;
+
+
+
+
+
+

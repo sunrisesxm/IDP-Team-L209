@@ -1,0 +1,15 @@
+Main;
+
+do{
+  call navigate --- IR signal;
+  Receive the signal;
+  call navigate --- egg collection point;
+  Collect the eggs;
+  call navigate --- delivery point 1 or 2;
+  Deliver a nest
+  
+}while (!all four nests delivered);
+
+call navigation --- recycling point;
+recycle;
+return;
