@@ -1,3 +1,3 @@
-# Automatically generated Makefile
-test_robot_link : test_robot_link.cc 
-	 g++ -ansi -Wall -g -I/export/teach/1BRobot -L/export/teach/1BRobot test_robot_link.cc -o test_robot_link -lrobot
+# Automatically generated Makefile for arm
+test_robot_link.arm : test_robot_link.cc 
+	 arm-linux-gnueabi-g++ -ansi -Wall -g -I/usr/arm-unknown-linux-gnueabi/include -I/export/teach/1BRobot -L/usr/arm-unknown-linux-gnueabi/lib test_robot_link.cc -o test_robot_link.arm -lrobot
