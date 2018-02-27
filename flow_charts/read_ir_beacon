@@ -1,0 +1,4 @@
+while !Transmission received? {
+  Read IR sensor x3;
+  if Readings equal? { return Transmission received event;}
+  else continue

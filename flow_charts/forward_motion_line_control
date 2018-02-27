@@ -1,0 +1,34 @@
+while(Line control enabled?) {
+Wait;
+Read front line sensors;
+if (!Correctly read?) continue
+switch (Line sensor cases){
+  case 000:
+    if (Previous reading shows veering to the left?) Set right motor to 0;
+    else Set left motor to 0;
+    break
+  case 001:
+  Set right motor to 1/3;
+  break
+  case 011:
+  Set right motor to 2/3;
+  break
+  case 010:
+  Correct heading, set motors equal;
+  break
+  case 110:
+  Set left motor to 2/3;
+  break
+  case 100:
+  Set left motor to 1/3;
+  break
+  case 111:
+    Junction detected;
+    return Junction event;
+    break
+  case All other signals:
+  continue;
+}}
+
+  
+

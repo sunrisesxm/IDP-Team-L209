@@ -1,0 +1,20 @@
+while !Tasks complete? {
+  switch Next task {
+    case Move:
+      Move subroutine;
+      continue
+    case Collect:
+      Collect egg subroutine;
+      continue
+    case Sort:
+      Sort subroutine;
+      continue
+    case Read beacon:
+      Read beacon subroutine;
+      continue
+    case Rotate turntable:
+      Rotate turntable subroutine;
+      continue
+  }
+}
+return Finish!
