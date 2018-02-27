@@ -1,9 +1,13 @@
 Navigation;
+<input -- current position>;
+<input -- destination>;
+Determine junctions and
+turnings along path;
 ftl:
 
   do{
     do{
-      Follow the lines;
+      call Follow the lines;
       if (destination reached) {
         execute relevant command;
         return; }

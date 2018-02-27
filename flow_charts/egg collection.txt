@@ -6,8 +6,10 @@ do{
     (turn the platform) 
     }while(!egg detected by distance sensor);
   call egg collection mechanism;
-  if (the egg is required) push to nest;
-  else push to recycling;
+  if (the egg is required) push to nest
+  (motor 3 turn);
+  else push to recycling
+  (motor 3 turn backwards);
   
 }while (!All eggs needed are obtained);
 

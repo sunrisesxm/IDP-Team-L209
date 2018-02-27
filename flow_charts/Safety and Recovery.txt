@@ -1,0 +1,27 @@
+Safety and Recovery;
+np:
+normal procedure;
+record approximate position
+using integration;
+
+branch (A){
+
+if (time too long for the path){
+  robot is lost;
+  go to starting point
+  using approx. position;
+  goto np;
+}
+}
+
+branch (B){
+
+if (too close to the wall){
+  emegency stop;
+  reverse;
+  goto np;
+}
+}
+
+
+
