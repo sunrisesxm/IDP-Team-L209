@@ -1,0 +1,24 @@
+Navigation;
+<input -- current position>;
+<input -- destination>;
+Determine junctions and
+turnings along path;
+ftl:
+
+  do{
+    do{
+      call Follow the lines;
+      if (destination reached) {
+        execute relevant command;
+        return; }
+    } while (!junction detedted)
+    Flash an LED;
+  } while (going straight?)
+  Turn left/right;
+goto ftl;
+
+
+
+
+
+
