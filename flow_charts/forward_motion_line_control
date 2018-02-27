@@ -1,34 +1,26 @@
-while(Line control enabled?) {
-Wait;
-Read front line sensors;
-if (!Correctly read?) continue
-switch (Line sensor cases){
-  case 000:
-    if (Previous reading shows veering to the left?) Set right motor to 0;
-    else Set left motor to 0;
-    break
-  case 001:
-  Set right motor to 1/3;
-  break
-  case 011:
-  Set right motor to 2/3;
-  break
-  case 010:
-  Correct heading, set motors equal;
-  break
-  case 110:
-  Set left motor to 2/3;
-  break
-  case 100:
-  Set left motor to 1/3;
-  break
-  case 111:
-    Junction detected;
-    return Junction event;
-    break
-  case All other signals:
-  continue;
-}}
-
-  
-
+Enable forward motion line control;
+while (!Destination reached event?) {
+  if Junction event? {Load next direction;
+  if Next direction requires a rotation? {
+    Slow motors (line control remains enabled);
+    before_check1:
+    Read aft line sensor;
+    if Aft line sensor on? { Disable line control; Start rotation;
+    before_check2:
+      Read front line sensors;
+      if At least two front line sensors on? {Stop rotation; Re-enable line control; continue}
+      else {Wait; loop before_check2 };
+    }
+    else {
+      Wait;
+        loop before_check1;
+    }
+}
+else { Disable line control;
+  Drive forward across junction;
+  Re-enable line-control;
+}
+}
+}
+Disable forward motion line control;
+Load next task;
