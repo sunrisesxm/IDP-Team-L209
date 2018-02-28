@@ -1,16 +1,22 @@
 Egg collection;
 Send IR signal for x seconds
 (turn the plate to clockwise end);
+<Load eggs_required>;
 do{
-  Start sending IR signal 
-  (turn the platform anti-clockwise) ;
   do{
-    wait;
-    }while(!Distance sensor within the range);
-  Stop sending IR signal;
-  Enable collection motor;
+    i=0;
+    Send an IR signal 
+    (turn the turntable anti-clockwise) ;
+    collect:
+    Enable collection motor;
+    }//egg's not in position,
+    //turn the turntable again;
+    while(i>=1)
+  if (!Colour sensor gives a reading){
+    //try again;
+    i+=1;
+    goto collect;}
   //let A,B are the two kinds of eggs required
-  <Load eggs_required>;
   if (Colour sensor within 
   range of egg A) 
     if (a < 2){a+=1;Turn sorting_motor clockwise;}

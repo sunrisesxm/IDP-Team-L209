@@ -1,19 +1,16 @@
 Main;
 
 do{
-  Load destination :
+  Navigate to:
   *IR transmitter*;
-  call Forward line control;
   Receive the signal;
   <Set delivery_point>;
   <Set eggs_required>;
-  Load destination :
+  Navigate to:
   *Egg collection plate*;
-  call Forward line control;
   call Egg collection and sorting;
-  Load destination :
+  Navigate to:
   *delivery point*;
-  call Forward line control;
   Enable egg delivery motor;
   
 }while (!all four nests delivered);
