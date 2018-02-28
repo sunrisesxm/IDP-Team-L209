@@ -85,6 +85,7 @@ void Navigation::follow_line()
         }
         if (junction_detected and line_sensors.s4 == 1) { // If a junction has been detected and the rear line sensor is on, junction has been reached
             junction_reached = true;
+            motors.stop();
         }
         delay(20); // Wait 20ms before updating to account for sensor response time
 }

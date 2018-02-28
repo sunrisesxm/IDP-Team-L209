@@ -12,7 +12,7 @@ extern robot_link rlink;
 // IR transmitter methods
 void IRTransmitter::set_turntable_postition(int position)
 {
-    int output_on = 0x01;
+    int output_on = 16;
     int output_off = 0;
     switch (position) {
         case 0:
