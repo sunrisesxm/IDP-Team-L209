@@ -6,10 +6,10 @@ using namespace std;
 
 extern robot_link rlink;
 
-#include "distance_sensor.h"
+#include "microswitches.h"
 
 // Distance sensor methods
-void DistanceSensor::update();
+void MicroSwitch::();
 {
     int reading = rlink.request(ADC0);
     int ref = rlink.request(ADC1);
@@ -20,5 +20,5 @@ void DistanceSensor::update();
 void DistanceSensor::convert_voltage_to_distance()
 {
     // Calibration required to get the distance corresponding to voltage
-    // Function updates distance
 }
+
