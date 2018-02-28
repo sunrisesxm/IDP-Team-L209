@@ -4,9 +4,8 @@ using namespace std;
 class DistanceSensor {
 public:
     double distance;
-    bool update();
+    void update();
 private:
-    double voltage;
     static const double reference = 3.1;
     double convert_voltage_to_distance(double);
 
