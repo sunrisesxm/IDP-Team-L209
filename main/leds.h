@@ -1,7 +1,7 @@
 using namespace std;
 
 enum NestType {A,B};
-enum Composition {S,B,SS,BB,SB,SSB,SBB,SSBB};
+enum Composition {EMPTY,S,B,SS,BB,SB,SSB,SBB,SSBB};
 
 // Line sensors class
 class LEDs {

@@ -1,12 +1,13 @@
-using namespace std;
+0using namespace std;
+
+enum MicroSwitchType {COLLECTION, COLOUR_SENSOR};
 
 // Distance sensor class
 class MicroSwitch {
 public:
-    void activate();
+    bool catch_switch();
+    MicroSwitchType type;
 private:
-    static const double reference = 3.1;
-    double convert_voltage_to_distance(double);
-    
-}
+    void read();
+};
 
