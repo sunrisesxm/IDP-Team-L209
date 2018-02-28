@@ -1,16 +1,29 @@
 Egg collection;
-
+Send IR signal for x seconds
+(turn the plate to clockwise end);
 do{
+  Start sending IR signal 
+  (turn the platform anti-clockwise) ;
   do{
-    send IR signal 
-    (turn the platform) 
-    }while(!egg detected by distance sensor);
-  call egg collection mechanism;
-  if (the egg is required) push to nest
-  (motor 3 turn);
-  else push to recycling
-  (motor 3 turn backwards);
+    wait;
+    }while(!Distance sensor within the range);
+  Stop sending IR signal;
+  Enable collection motor;
+  //let A,B are the two kinds of eggs required
+  <Load eggs_required>;
+  if (Colour sensor within 
+  range of egg A) 
+    if (a < 2){a+=1;Turn sorting_motor clockwise;}
+    else goto abort
+  else {
+  if (Colour sensor within 
+  range of egg B) 
+    if b < 2){b+=1;Turn sorting_motor clockwise;}
+    else goto abort
+  }
+  abort:
+  Turn sorting_motor anti-clockwise;
   
-}while (!All eggs needed are obtained);
+}while (!a=2 && b=2);
 
 return finish;

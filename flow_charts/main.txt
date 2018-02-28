@@ -1,15 +1,24 @@
 Main;
 
 do{
-  call navigate --- IR signal;
+  Load destination :
+  *IR transmitter*;
+  call Forward line control;
   Receive the signal;
-  call navigate --- egg collection point;
-  Collect the eggs;
-  call navigate --- delivery point 1 or 2;
-  Deliver a nest
+  <Set delivery_point>;
+  <Set eggs_required>;
+  Load destination :
+  *Egg collection plate*;
+  call Forward line control;
+  call Egg collection and sorting;
+  Load destination :
+  *delivery point*;
+  call Forward line control;
+  Enable egg delivery motor;
   
 }while (!all four nests delivered);
 
-call navigation --- recycling point;
+Load destination :
+  *Recycling point*;
 recycle;
-return;
+return Finish;

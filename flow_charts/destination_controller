@@ -1,8 +1,21 @@
-while !Destination reached? {
-  if(On last straight?) { before_distance: Read distance sensor;
-  if Distance error < Final tolerance {return Destination reached event;}
-  else {
-    if Distance error < First tolerance {Implement distance controller!; Wait; loop before_distance;
+Destinaton Controller;
+
+FLC:
+call Forward_line_control;
+
+if (!Destination reached?) {
+  if(On last straight?) {
+    before_distance:
+    Read distance sensor;
+    if Distance error < Final tolerance {return Destination reached event;}
+    else {
+      if Distance error < First tolerance {
+        Implement distance controller!; 
+        Wait; 
+        loop before_distance;}
+      else {loop before_distance;}
+    }
   }
-  else {loop before_distance;}
+  else goto FLC;
 }
+else return Destination reached event;
