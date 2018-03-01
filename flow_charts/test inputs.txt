@@ -1,0 +1,30 @@
+test inputs;
+
+if (initial input test){
+  read all line sensors;
+  if (!reading is "ON_COURSE") {
+    faulty line sensors;
+    call disaster recovery;
+    return test failed
+  }
+  <line sensors ok>;
+  
+  analogue:
+  
+  read all analogue sensors;
+  wait;
+  if (!Sensor reading varies
+  sensor reading within range)
+    if (t>1s) {
+      faulty analogue input;
+      call disaster recovery;
+      return test failed;
+    }
+    else goto analogue;
+  else <analogue input ok>;
+  
+  return test passed;
+}
+else{
+  goto analogue;
+}

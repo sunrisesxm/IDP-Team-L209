@@ -1,16 +1,15 @@
-Safety and Recovery;
+Disaster Recovery;
 np:
 normal procedure;
 
 
 branch (A){
-record approximate position
-using integration;
-if (time too long for the path){
-  robot is lost;
-  go to starting point
-  using approx. position;
-  goto np;
+  faltu analogue/digital signal;
+  reset everything from controller;
+  input test (again);
+  if (passed) goto np;
+  else return STOP
+
 }
 }
 
@@ -18,7 +17,8 @@ branch (B){
 
 if (too close to the wall){
   emegency stop;
-  reverse;
+  reverse to the nearest junction;
+  carry-on navigation;
   goto np;
 }
 }
